@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <title>Trykia Notes Keeper</title>
+</head>
+<body onload="showNotes()" class="container dark-mode">
+    <header>
+        <nav id="navbar">
+            <div id="logo">
+                <h1>Trykia Notes Keeper📝</h1>
+            </div>
+            <button class="light-mode-button" aria-label="Toggle Light Mode"
+        onclick="toggle_light_mode()"><span></span><span></span></button>
+        </nav>
+    </header>
+    <div class="welcome-message">
+        <h2>Plan your day from anywhere and anytime</h2>
+        <h4><em>Start working on your todo today</em></h4>
+    </div>
+    <form id="container1">
+        <div id="notebox">
+            <input text="text" id="note" placeholder="Enter Your Note Here" value="">
+        </div>
+        <div class="noInputText" id="noInputText">Please do write something for your note before adding it ... </div>
+        <div class="buttons">
+            <button id="add">Add Note</button>
+        </div>
+        
+
+        </div>
+        <br><br>
+    </form>
+    <div id="mainbox">
+
+    </div>
+</body>
+<script src="script.js"></script>
+<script>
+    let toggle_light_mode = () =>{
+        var app =  document.getElementsByTagName("BODY")[0];
+        if(localStorage.lightMode == "dark"){
+            localStorage.lightMode = "light";
+            app.setAttribute("light-mode", "light");
+        }
+        else {
+            localStorage.lightMode = "dark";
+            app.setAttribute("light-mode", "dark");
+    }
+    }
+</script>
+</html>
